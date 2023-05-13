@@ -30,7 +30,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource('blog', BlogController::class)
-    ->only('index', 'store', 'edit', 'update')
+    ->only('index', 'store', 'edit', 'update', 'destroy')
     ->middleware(['auth', 'verified'])
 ;
 

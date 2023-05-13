@@ -81,6 +81,10 @@ class BlogController extends Controller
      */
     public function destroy(Blog $blog)
     {
-        //
+        $this->authorize('delete', $blog);
+
+        $blog->delete();
+
+        return redirect(route('blog.index'));
     }
 }
